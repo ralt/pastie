@@ -1,0 +1,30 @@
+{
+  "name": "pastie",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ralt/pastie"
+  },
+  "author": "Florian Margaine <florian@margaine.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ralt/pastie/issues"
+  },
+  "homepage": "https://github.com/Ralt/pastie",
+  "dependencies": {
+    "bluebird": "^1.2.4",
+    "body-parser": "^1.2.0",
+    "cookie-parser": "^1.1.0",
+    "debug": "^0.8.1",
+    "express": "^3.8.0",
+    "jade": "^1.3.1",
+    "morgan": "^1.1.1",
+    "pg": "^3.2.0",
+    "static-favicon": "^2.0.0-alpha"
+  }
+}
