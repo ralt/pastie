@@ -4,7 +4,9 @@ A very simple pastie service.
 
 ## Demo
 
-A few screenshots of the application: http://imgur.com/a/ASvpq
+The website is available online: http://pastie.margaine.com
+
+Only 10,000 pasties are available at max (to keep a free account on heroku), so I may or may not regularly truncate the pasties table.
 
 ## Description
 
