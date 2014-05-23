@@ -23,7 +23,7 @@ app.use(app.router);
 var pastie = require('./routes/pastie');
 app.get('/', pastie.newGet);
 app.post('/', pastie.newPost);
-app.get('/:id', pastie.getOne);
+app.get('/:uuid', pastie.getOne);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

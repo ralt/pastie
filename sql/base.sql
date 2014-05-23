@@ -1,4 +1,6 @@
+-- CREATE EXTENSION "uuid-ossp" must be run as root to support the UUID type.
+
 CREATE TABLE pastie (
-    id serial PRIMARY KEY,
+    uuid uuid PRIMARY KEY,
     content text NOT NULL
 )
