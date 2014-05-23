@@ -1,7 +1,6 @@
 var Promise = require('bluebird');
 var pg = require('pg');
-var user = process.ENV.
-var connString = process.ENV.DATABASE_URL;
+var connString = process.env.DATABASE_URL;
 
 Promise.promisifyAll(pg);
 Promise.promisifyAll(pg.Client.prototype);
