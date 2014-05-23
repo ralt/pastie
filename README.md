@@ -2,6 +2,10 @@
 
 A very simple pastie service.
 
+## Demo
+
+A few screenshots of the application: http://imgur.com/a/ASvpq
+
 ## Description
 
 Sick of other pastie services where much cruft was added, this is a very simple pastie.
