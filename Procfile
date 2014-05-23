@@ -1,0 +1,1 @@
+web: bash bin/www
