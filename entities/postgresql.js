@@ -11,8 +11,6 @@ exports.connect = function() {
         close = done;
         return client;
     }).disposer(function() {
-        try {
-            if (close) close();
-        } catch(e) {};
+        if (close) close();
     });
 };
