@@ -1,10 +1,11 @@
 'use strict';
 
 var db = require('./postgresql');
+var Promise = require('bluebird');
 
 exports.add = function(pastie) {
-    return db.connect().then(function() {
-        return this.client.queryAsync({
+    return Promise.using(db.connect(), function(client) {
+        return client.queryAsync({
             name: 'add_pastie',
             text: 'INSERT INTO pastie (uuid, content) VALUES (uuid_generate_v4(), $1) RETURNING uuid',
             values: [pastie.content]
@@ -13,8 +14,8 @@ exports.add = function(pastie) {
 };
 
 exports.getOne = function(uuid) {
-    return db.connect().then(function() {
-        return this.client.queryAsync({
+    return Promise.using(db.connect(), function(client) {
+        return client.queryAsync({
             name: 'get_pastie',
             text: 'SELECT content FROM pastie WHERE uuid = $1',
             values: [uuid]

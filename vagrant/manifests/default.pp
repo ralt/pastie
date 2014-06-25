@@ -54,7 +54,7 @@ class postgres-dev {
 class init_db {
     exec { 'create db structure':
         environment => [ 'PGPASSWORD=password' ],
-        command => 'psql -h localhost -U pastie_user -d pastie -a -f /vagrant/sql/postgres.creation.sql',
+        command => 'psql -h localhost -U pastie_user -d pastie -a -f /vagrant/sql/base.sql',
         require => Class['postgres']
     }
 }

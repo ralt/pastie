@@ -20,12 +20,15 @@
  * THE SOFTWARE.
  * 
  */
-module.exports = (function() {
-    if (this !== void 0) return this;
-    try {return global;}
-    catch(e) {}
-    try {return window;}
-    catch(e) {}
-    try {return self;}
-    catch(e) {}
-})();
+"use strict";
+module.exports = function(Promise, INTERNAL) {
+var PromiseReduce = Promise.reduce;
+
+Promise.prototype.each = function Promise$each(fn) {
+    return PromiseReduce(this, fn, null, INTERNAL);
+};
+
+Promise.each = function Promise$Each(promises, fn) {
+    return PromiseReduce(promises, fn, null, INTERNAL);
+};
+};

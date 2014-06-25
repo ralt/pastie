@@ -6,10 +6,13 @@ Promise.promisifyAll(pg);
 Promise.promisifyAll(pg.Client.prototype);
 
 exports.connect = function() {
-    return pg.connectAsync(connString).bind({}).spread(function(client, close) {
-        this.close = close;
-        this.client = client;
-    }).finally(function() {
-        this.close();
+    var close;
+    return pg.connectAsync(connString).spread(function(client, done) {
+        close = done;
+        return client;
+    }).disposer(function() {
+        try {
+            if (close) close();
+        } catch(e) {};
     });
 };
