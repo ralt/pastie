@@ -2,6 +2,6 @@ extends layout
 
 block content
   form(method='POST')
-    textarea(name='content', spellcheck='false', id='content', class='content', autofocus, required)
+    textarea(name='content', spellcheck='false', id='content', class='content', autofocus, required, placeholder='Paste your code here, then click the "Save" button.')
     input(type='submit', value='Save', id='submit', class='submit')
   script(src='/javascript/add.js')
